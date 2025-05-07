@@ -22,4 +22,19 @@ app.get("/", (req, res) => {
   res.render("index", { title: "Mini Message Board", messages: messages });
 });
 
+app.get("/new", (req, res) => {
+  res.render("form");
+});
+
+app.use(express.urlencoded({ extended: true }));
+
+app.post("/new", (req, res) => {
+  const messageText = req.body.message;
+  const messageUser = req.body.author;
+
+  messages.push({ text: messageText, user: messageUser, added: new Date() });
+
+  res.redirect("/");
+});
+
 app.listen(3000);
