@@ -10,4 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use("/", indexRoute);
 
+app.use((err, req, res, next) => {
+  res.status(err.statusCode || 500).send(err.message);
+});
+
 app.listen(3000);

@@ -36,7 +36,11 @@ indexRoute.get("/message/:id", (req, res) => {
   const id = req.params.id;
   const message = messages.find((item) => id === item.id);
 
-  res.render("details", { message: message });
+  if (message) {
+    res.render("details", { message: message });
+  } else {
+    res.status("404").render("404");
+  }
 });
 
 module.exports = indexRoute;
