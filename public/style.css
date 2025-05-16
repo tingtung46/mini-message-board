@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color: rgb(255, 237, 235);
+  background-color: rgb(243, 118, 102);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3,
+p {
+  color: rgb(255, 208, 202);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(255, 237, 235);
+}
+
+button {
+  display: block;
+  padding: 2px 4px;
+}
+
+.messages-container {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  border: 2px solid rgb(255, 237, 235);
+  border-radius: 4px;
+  padding: 1.2rem 3.3rem;
+  background-color: rgb(252, 89, 68);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+.new-msg {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: 2px solid brown;
+  border-radius: 8px;
+  background-color: rgb(235, 60, 39);
+  align-self: center;
+}

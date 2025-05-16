@@ -1,14 +1,14 @@
-<div>
+<div class="messages-container">
   <% messages.forEach((message) => { %>
-  <div>
-    <div>
-      <h3><%= message.user %></h3>
-      <p><%= message.added %></p>
+  <a href="/message/<%= message.id %>">
+    <div class="card">
+      <div class="card-header">
+        <h3><%= message.user %></h3>
+        <p><%= message.added %></p>
+      </div>
+
+      <p><%= message.text %></p>
     </div>
-
-    <p><%= message.text %></p>
-
-    <p><a href="/message/<%= message.id %>">Details</a></p>
-  </div>
+  </a>
   <% }) %>
 </div>
