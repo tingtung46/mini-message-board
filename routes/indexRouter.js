@@ -1,19 +1,20 @@
 const { Router } = require("express");
 const indexRoute = Router();
 const { v4: uuid } = require("uuid");
+const { format } = require("date-fns");
 
 const messages = [
   {
     id: uuid(),
     text: "Hi there!",
     user: "Amando",
-    added: new Date(),
+    added: format(new Date(), "Pp"),
   },
   {
     id: uuid(),
     text: "Hello World!",
     user: "Charles",
-    added: new Date(),
+    added: format(new Date(), "Pp"),
   },
 ];
 
@@ -27,7 +28,12 @@ indexRoute.get("/new", (req, res) => {
 indexRoute.post("/new", (req, res) => {
   const { message, author } = req.body;
 
-  messages.push({ id: uuid(), text: message, user: author, added: new Date() });
+  messages.push({
+    id: uuid(),
+    text: message,
+    user: author,
+    added: format(new Date(), "Pp"),
+  });
 
   res.redirect("/");
 });

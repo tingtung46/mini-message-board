@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tingtung46/mini-message-board#readme",
   "dependencies": {
+    "date-fns": "^3.6.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-async-handler": "^1.2.0",
