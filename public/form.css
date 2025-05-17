@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color: rgb(255, 237, 235);
+  background-color: rgb(243, 118, 102);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  align-self: center;
+
+  div {
+    margin-bottom: 1.2rem;
+  }
+}
+
+label,
+input,
+textarea {
+  display: block;
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+input,
+textarea {
+  border-radius: 4px;
+  border: 2px solid brown;
+  padding: 0.4rem 0.8rem;
+  outline: none;
+  background-color: rgb(255, 237, 235);
+  color: rgb(46, 46, 46);
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  margin-top: 2rem;
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border: 2px solid brown;
+  border-radius: 8px;
+  background-color: rgb(235, 60, 39);
+  color: rgb(255, 237, 235);
+  cursor: pointer;
+}
