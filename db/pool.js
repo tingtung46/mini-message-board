@@ -25,4 +25,6 @@ async function getPgVersion() {
   }
 }
 
-getPgVersion();
+module.exports = {
+  getPgVersion,
+};

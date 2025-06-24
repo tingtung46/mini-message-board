@@ -3,6 +3,7 @@ const path = require("node:path");
 const app = express();
 const indexRoute = require("./routes/indexRouter");
 const assetsPath = path.join(__dirname, "public");
+const pgVersion = require("./db/pool");
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -18,3 +19,5 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000);
+
+pgVersion.getPgVersion();
