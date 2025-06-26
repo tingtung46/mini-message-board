@@ -2,6 +2,7 @@ const { Router } = require("express");
 const indexRoute = Router();
 const { v4: uuid } = require("uuid");
 const { format } = require("date-fns");
+const pool = require("../db/pool");
 
 const messages = [
   {
@@ -19,6 +20,7 @@ const messages = [
 ];
 
 indexRoute.get("/", (req, res) => {
+  pool.getPgVersion();
   res.render("index", { title: "Mini Message Board", messages: messages });
 });
 indexRoute.get("/new", (req, res) => {
