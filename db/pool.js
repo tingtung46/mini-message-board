@@ -4,7 +4,7 @@ const { Pool } = require("pg");
 
 const { PGHOST, PGDATABASE, PGUSER, PGPASSWORD } = process.env;
 
-const pool = new Pool({
+module.exports = new Pool({
   host: PGHOST,
   database: PGDATABASE,
   username: PGUSER,
@@ -14,17 +14,3 @@ const pool = new Pool({
     require: true,
   },
 });
-
-async function getPgVersion() {
-  const client = await pool.connect();
-  try {
-    const result = await client.query("SELECT version()");
-    console.log(result.rows[0]);
-  } finally {
-    client.release();
-  }
-}
-
-module.exports = {
-  getPgVersion,
-};
