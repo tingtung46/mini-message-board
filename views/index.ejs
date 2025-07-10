@@ -8,7 +8,10 @@
     <main>
       <h1><%= title %></h1>
 
-      <%- include('messages', {messages: messages}) %>
+      <div class="messages-container">
+        <% if (locals.users) { %> <%- include('messages.ejs', { users: users })
+        %> <% } %>
+      </div>
 
       <a href="new" class="new-msg">Add new message</a>
     </main>
